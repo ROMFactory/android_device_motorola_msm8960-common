@@ -61,8 +61,7 @@ PRODUCT_PACKAGES += \
     batt_health \
     charge_only_mode \
     graphicsd \
-    mot_boot_mode \
-    libxt_native.so
+    mot_boot_mode
 
 # Misc
 PRODUCT_PACKAGES += \
@@ -74,9 +73,6 @@ PRODUCT_PACKAGES += \
     libxml2 \
     tcpdump \
     Torch
-
-# Advanced settings
-PRODUCT_PACKAGES += MSM8960Parts
 
 # Lights
 PRODUCT_PACKAGES += lights.msm8960
@@ -91,8 +87,6 @@ PRODUCT_PACKAGES += qrngd
 PRODUCT_PACKAGES += \
     hciconfig \
     hcitool
-
-PRODUCT_COPY_FILES += $(LOCAL_PATH)/modules/bluetooth/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf
 
 # HAL
 PRODUCT_PACKAGES += \
@@ -217,8 +211,14 @@ PRODUCT_PACKAGES += \
     setup_fs
 
 #wifi
+PRODUCT_PACKAGES += libnetcmdiface
+
+# Symlinks
 PRODUCT_PACKAGES += \
     libnetcmdiface \
+    libxt_native.so \
+    mbhc.bin \
+    wcd9310_anc.bin \
     WCNSS_qcom_wlan_nv.bin
 
 # QC Perf
@@ -250,6 +250,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     lpa.decode=false \
     tunnel.decode=true \
     tunnel.audiovideo.decode=true \
+    qcom.hw.aac.encoder=true \
     af.resampler.quality=255 \
     ro.opengles.version=131072
 
