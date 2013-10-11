@@ -18,14 +18,28 @@ $(call inherit-product, device/motorola/qcom-common/qcom-common.mk)
 ## overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
+# HAL
+PRODUCT_PACKAGES += \
+    camera.msm8960 \
+
+# GPS
+PRODUCT_PACKAGES += \
+    gps.msm8960
+
 # Motorola
 PRODUCT_PACKAGES += \
+    batt_health \
+    charge_only_mode \
     graphicsd \
     mot_boot_mode
 
 # Misc
 PRODUCT_PACKAGES += \
     DevicePerformanceSettingsHelper
+
+# GPS configuration
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/gps/gps.conf:system/etc/gps.conf
 
 # Wifi
 PRODUCT_COPY_FILES += \
@@ -43,6 +57,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     init.qcom.post_boot.sh \
     init.qcom.sh
+
+# TWRP
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/etc/twrp.fstab:recovery/root/etc/twrp.fstab
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
