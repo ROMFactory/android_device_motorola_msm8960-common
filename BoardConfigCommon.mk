@@ -45,13 +45,19 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01600000
 
 # Telephony
 BOARD_RIL_CLASS := ../../../$(LOCAL_PATH)/ril/MotorolaQualcommRIL.java
-BOARD_RIL_NO_CELLINFOLIST:=true
+BOARD_RIL_NO_CELLINFOLIST := true
+
+# Audio
+BOARD_USES_MOTOROLA_EMU_AUDIO := true
 
 # Camera
 TARGET_PROVIDES_CAMERA_HAL := true
 COMMON_GLOBAL_CFLAGS += -DMR0_CAMERA_BLOB -DCAMERA_POWERMODE -DQCOM_BSP_CAMERA_ABI_HACK -DDISABLE_HW_ID_MATCH_CHECK
 #camera abi compatiblily
 TARGET_DISPLAY_INSECURE_MM_HEAP := true
+
+# Graphics
+BOARD_EGL_CFG := $(LOCAL_PATH)/config/egl.cfg
 
 # assert
 TARGET_OTA_ASSERT_DEVICE := xt925,xt926,xt907,vanquish_u,vanquish,scorpion_mini,mb886,qinara,asanti,asanti_c,xt897,xt897c
