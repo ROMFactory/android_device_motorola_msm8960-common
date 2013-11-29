@@ -187,11 +187,9 @@ static const struct android_id_info android_ids[] = {
     { "net_admin",     AID_NET_ADMIN, },
     { "net_bw_stats",  AID_NET_BW_STATS, },
     { "net_bw_acct",   AID_NET_BW_ACCT, },
-    { "net_bt_stack",  AID_NET_BT_STACK, },
+    { "qcom_oncrpc", AID_QCOM_ONCRPC, },
     { "qcom_diag", AID_QCOM_DIAG, },
-
-    { "misc",          AID_MISC, },
-    { "nobody",        AID_NOBODY, },
+    { "net_bt_stack",  AID_NET_BT_STACK, },
 
     { "smartcard", AID_SMARTCARD, },
     { "qcom_thermal", AID_QCOM_THERMAL, },
@@ -211,6 +209,9 @@ static const struct android_id_info android_ids[] = {
     { "mot_atvc",	AID_MOT_ATVC, },
     { "sprint_extension", AID_SPRINT_EXTENSION, },
     { "mot_dbvc",	AID_MOT_DBVC, },
+
+    { "misc",          AID_MISC, },
+    { "nobody",        AID_NOBODY, },
     { "theme_man", AID_THEMEMAN },
     { "audit",      AID_AUDIT, },
 };
